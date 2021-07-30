@@ -1,13 +1,17 @@
 package com.moodAnalyser;
 public class MoodAnalyser {
-    public static String analyseMood(String message) {
+    enum s
+    {
+        S1
+    }
+    public static String analyseMood(String message) throws MoodAnalysisException {
         try {
             if (message.contains("sad"))
                 return "sad";
             else
                 return "Happy";
         } catch (NullPointerException e) {
-            return "HAPPY";
+            throw new MoodAnalysisException("Invalid Message");
         }
     }
 }

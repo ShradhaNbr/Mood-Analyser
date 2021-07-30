@@ -1,35 +1,38 @@
 package com.moodAnalyser;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import java.util.Arrays;
+import java.util.Collection;
 
+@RunWith(Parameterized.class)
 public class MoodAnalyserTest {
-    MoodAnalyser moodAnalyser = new MoodAnalyser();
+    public String input;
+    public String expectedResult;
 
-//Method to test if the mood is sad
+    public MoodAnalyserTest(String input,String expectedResult){
+        this.input=input;
+        this.expectedResult=expectedResult;
+    }
+    @Parameterized.Parameters
+    public static Collection parameters(){
+        return Arrays.asList(new Object[][]{{"I am sad", "sad"}, {"Be Happy", "Happy"}, {"Its a Happy day", "Happy"}, {"I am Happy", "Happy"},{null,"HAPPY"}});
+    }
+    /*
+     * this is test case for analyse mood Method.
+     * if Method Argument contain 'sad' character then it should return SAD
+     * else return HAPPY
+     */
     @Test
-    public void whenTestedMood_ifIamInSadMood_shouldReturnSad() {
-        String mood = moodAnalyser.analyseMood("I am in sad Mood");
-        Assert.assertEquals("sad",mood);
+    public void givenMessage_ShouldReturnMood() throws MoodAnalysisException {
+        try {
+            MoodAnalyser analyser = new MoodAnalyser();
+            String mood = analyser.analyseMood(input);
+            Assert.assertEquals(expectedResult, mood);
+        } catch (MoodAnalysisException e){
+            e.printStackTrace();
+        }
     }
-
-    //Method to test if the mood is happy
-    @Test
-    public void whenTestedMood_ifHappy_shouldReturnHappy() {
-        String mood = moodAnalyser.analyseMood("Happy Days");
-        Assert.assertEquals("Happy",mood);
-    }
-
-    //Method to test if the no mood is given
-    @Test
-    public void whenTestedMood_ifNotInAnyMood_shouldReturnHappy() {
-        String mood = moodAnalyser.analyseMood("Iam in any mood");
-        Assert.assertEquals("Happy",mood);
-    }
-    @Test
-    public void whenTested_ifNull_shouldReturnHAPPY() {
-        String mood = moodAnalyser.analyseMood(null);
-        Assert.assertEquals("HAPPY",mood);
-    }
-    }
-
+}
