@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.moodAnalyser.MoodAnalyserTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-07-30T12:12:49" hostname="SHRADHA" time="0.033">
+<testsuite name="com.moodAnalyser.MoodAnalyserTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-07-30T12:24:01" hostname="SHRADHA" time="0.041">
   <properties/>
-  <testcase name="whenTestedMood_ifSad_shouldReturnSad()" classname="com.moodAnalyser.MoodAnalyserTest" time="0.028"/>
-  <testcase name="whenTestedMood_ifHappy_shouldReturnHappy()" classname="com.moodAnalyser.MoodAnalyserTest" time="0.002"/>
-  <testcase name="whenTestedMood_ifNotInAnyMood_shouldReturnHappy()" classname="com.moodAnalyser.MoodAnalyserTest" time="0.001"/>
+  <testcase name="whenTestedMood_ifHappy_shouldReturnHappy()" classname="com.moodAnalyser.MoodAnalyserTest" time="0.031"/>
+  <testcase name="whenTestedMood_ifNotInAnyMood_shouldReturnHappy()" classname="com.moodAnalyser.MoodAnalyserTest" time="0.003"/>
+  <testcase name="whenTestedMood_ifIamInSadMood_shouldReturnSad()" classname="com.moodAnalyser.MoodAnalyserTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

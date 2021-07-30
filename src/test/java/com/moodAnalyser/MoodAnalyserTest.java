@@ -8,8 +8,8 @@ public class MoodAnalyserTest {
 
 //Method to test if the mood is sad
     @Test
-    public void whenTestedMood_ifSad_shouldReturnSad() {
-        String mood = moodAnalyser.analyseMood("Iam sad");
+    public void whenTestedMood_ifIamInSadMood_shouldReturnSad() {
+        String mood = moodAnalyser.analyseMood("I am in sad Mood");
         Assert.assertEquals("sad",mood);
     }
 
