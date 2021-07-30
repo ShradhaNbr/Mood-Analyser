@@ -23,7 +23,7 @@ public class MoodAnalyserTest {
     //Method to test if the no mood is given
     @Test
     public void whenTestedMood_ifNotInAnyMood_shouldReturnHappy() {
-        String mood = moodAnalyser.analyseMood("Iam not in a mood");
+        String mood = moodAnalyser.analyseMood("Iam in any mood");
         Assert.assertEquals("Happy",mood);
     }
 
